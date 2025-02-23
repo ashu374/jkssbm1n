@@ -1,0 +1,14 @@
+jkssb_mission_ek_naukri/
+├── css/
+│   └── styles.css
+├── js/
+│   └── scripts.js
+├── resources/
+│   └── syllabus.html
+├── courses/
+│   └── junior-assistant.html
+├── index.html
+├── courses.html
+├── resources.html
+├── about.html
+├── notifications.html
