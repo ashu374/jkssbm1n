@@ -71,6 +71,17 @@ header h1 {
   color: var(--text-color);
   cursor: pointer;
   padding: 10px;
+  font-family: "Font Awesome 5 Free" !important; /* Explicitly set Font Awesome font */
+  font-weight: 900 !important; /* Required for solid icons */
+}
+
+/* Ensure Font Awesome icons render correctly */
+.fa,
+.fas,
+.fa-bars {
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900 !important;
+  display: inline-block;
 }
 
 /* Sliding Text */
@@ -156,6 +167,8 @@ header h1 {
   color: var(--primary-color);
   margin-bottom: 10px;
   font-size: 3rem;
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900 !important;
 }
 
 .card h3 {
@@ -234,16 +247,24 @@ footer a:hover {
   transform: scale(1.1);
 }
 
+#backToTop i {
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900 !important;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .topnav a:not(.icon) {
     display: none;
   }
   .topnav .icon {
-    display: block;
+    display: block !important;
     position: absolute;
     right: 20px;
     top: 15px;
+    z-index: 1000;
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
   }
   .topnav.responsive {
     flex-direction: column;
@@ -254,6 +275,7 @@ footer a:hover {
     text-align: center;
     padding: 10px;
     width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
   }
   .hero h2 {
     font-size: 1.5rem;
