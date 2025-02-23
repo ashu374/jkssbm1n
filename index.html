@@ -50,24 +50,27 @@
       </nav>
     </div>
   </header>
+
   <section class="hero">
     <div class="container">
       <h2>Welcome to JKSSB Mission Ek Naukri</h2>
       <p>Your ultimate destination for free, comprehensive, and quality online education tailored specifically for JKSSB, JKPSC, NTA Sociology/Social Work, and other competitive exams.</p>
-      <a href="https://www.youtube.com/@jkssbmissioneknaukri" class="btn" target="_blank">Watch Free Lectures</a>
-      <a href="https://t.me/jkssb_mission_ek_naukri" class="btn" target="_blank">Join Our Community</a>
+      <a href="https://www.youtube.com/@jkssbmissioneknaukri" class="btn" target="_blank" rel="noopener noreferrer">Watch Free Lectures</a>
+      <a href="https://t.me/jkssb_mission_ek_naukri" class="btn" target="_blank" rel="noopener noreferrer">Join Our Community</a>
     </div>
   </section>
+
   <footer>
     <div class="container">
       <p>© 2025 JKSSB Mission Ek Naukri. All rights reserved.</p>
       <p>
-        <a href="https://www.youtube.com/@jkssbmissioneknaukri" target="_blank">YouTube</a> |
-        <a href="#" target="_blank">Instagram</a> |
-        <a href="#" target="_blank">Telegram</a>
+        <a href="https://www.youtube.com/@jkssbmissioneknaukri" target="_blank" rel="noopener noreferrer">YouTube</a> |
+        <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a> |
+        <a href="#" target="_blank" rel="noopener noreferrer">Telegram</a>
       </p>
     </div>
   </footer>
+
   <button id="backToTop" class="btn" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
 
   <!-- Cookie Consent Banner -->
@@ -92,6 +95,33 @@
     // Check if user has already accepted cookies
     if (localStorage.getItem("cookieConsent") === "accepted") {
       document.getElementById("cookieConsent").style.display = "none";
+    }
+
+    // Toggle Navigation for Mobile
+    function toggleNavigation() {
+      const nav = document.getElementById("myTopnav");
+      if (nav.classList.contains("responsive")) {
+        nav.classList.remove("responsive");
+      } else {
+        nav.classList.add("responsive");
+      }
+    }
+
+    // Back-to-Top Button Logic
+    window.addEventListener("scroll", function () {
+      const button = document.getElementById("backToTop");
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        button.style.display = "block";
+      } else {
+        button.style.display = "none";
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     }
   </script>
 </body>
