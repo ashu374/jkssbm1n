@@ -44,17 +44,17 @@ header h1 {
 /* Navigation */
 .topnav {
   display: flex;
-  justify-content: space-around; /* Distributes space evenly */
+  justify-content: space-around;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
   padding: 10px 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  overflow: hidden; /* Ensures no overflow issues */
+  overflow: hidden;
 }
 
 .topnav a {
-  flex: 1; /* Allow items to grow and shrink */
+  flex: 1;
   text-align: center;
   padding: 14px 20px;
   font-size: 1rem;
@@ -179,14 +179,8 @@ footer a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .topnav {
-    flex-direction: column; /* Stack items vertically on smaller screens */
-    align-items: flex-start;
-  }
-  .topnav a {
-    width: 100%; /* Full width for each item */
-    text-align: center;
-    padding: 10px 0; /* Adjust padding for vertical layout */
+  .topnav a:not(.icon) {
+    display: none;
   }
   .topnav .icon {
     display: block !important;
