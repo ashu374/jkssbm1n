@@ -71,8 +71,8 @@ header h1 {
   color: var(--text-color);
   cursor: pointer;
   padding: 10px;
-  font-family: "Font Awesome 5 Free" !important; /* Explicitly set Font Awesome font */
-  font-weight: 900 !important; /* Required for solid icons */
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900 !important;
 }
 
 /* Ensure Font Awesome icons render correctly */
