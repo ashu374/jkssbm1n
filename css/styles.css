@@ -5,6 +5,7 @@
   --text-color: #fff;
   --header-bg: rgba(0, 0, 0, 0.7);
   --footer-bg: rgba(0, 0, 0, 0.8);
+  --card-bg: #1f2a37;
   --transition-speed: 0.3s;
 }
 
@@ -86,14 +87,6 @@ header h1 {
   padding: 10px;
 }
 
-/* Ensure Font Awesome icons render correctly */
-.fa,
-.fas,
-.fa-bars {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-}
-
 /* Sliding Text */
 .sliding-container {
   width: 100%;
@@ -148,6 +141,73 @@ header h1 {
 .hero .btn:hover {
   background-color: #028a4b;
   transform: scale(1.05);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  padding: 20px;
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card i {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-size: 3rem;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.card .btn {
+  margin-top: 10px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background var(--transition-speed) ease;
+}
+
+.card .btn:hover {
+  background: #028a4b;
+}
+
+/* Resource List */
+.resource-list {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.resource-list li {
+  margin-bottom: 10px;
+}
+
+.resource-list a {
+  color: var(--primary-color);
+}
+
+.resource-list a:hover {
+  color: var(--text-color);
 }
 
 /* Footer */
