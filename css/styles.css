@@ -1,8 +1,11 @@
 :root {
-  --primary-color: #04AA6D;
+  --primary-color: #04aa6d;
   --secondary-color: #e74c3c;
   --bg-color: #141e30;
   --text-color: #fff;
+  --header-bg: rgba(0, 0, 0, 0.7);
+  --footer-bg: rgba(0, 0, 0, 0.8);
+  --transition-speed: 0.3s;
 }
 
 /* Global Styles */
@@ -13,16 +16,20 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background: linear-gradient(135deg, var(--bg-color), #243b55);
   color: var(--text-color);
   line-height: 1.6;
   overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+  transition: color var(--transition-speed) ease;
 }
 
 ul {
@@ -31,20 +38,26 @@ ul {
 
 .container {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   padding: 0 20px;
 }
 
 /* Header */
+header {
+  background-color: var(--header-bg);
+  padding: 20px 0;
+}
+
 header h1 {
   text-align: center;
   margin-bottom: 10px;
+  font-size: 2rem;
 }
 
 /* Navigation */
 .topnav {
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--header-bg);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -57,7 +70,7 @@ header h1 {
   padding: 14px 20px;
   font-size: 1rem;
   color: var(--text-color);
-  transition: background-color 0.3s ease;
+  transition: background-color var(--transition-speed) ease;
 }
 
 .topnav a:hover,
@@ -71,17 +84,14 @@ header h1 {
   color: var(--text-color);
   cursor: pointer;
   padding: 10px;
-  font-family: "Font Awesome 5 Free" !important;
-  font-weight: 900 !important;
 }
 
 /* Ensure Font Awesome icons render correctly */
 .fa,
 .fas,
 .fa-bars {
-  font-family: "Font Awesome 5 Free" !important;
-  font-weight: 900 !important;
-  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
 }
 
 /* Sliding Text */
@@ -103,8 +113,12 @@ header h1 {
 }
 
 @keyframes slide {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 /* Hero Section */
@@ -113,10 +127,11 @@ header h1 {
   color: var(--text-color);
   padding: 80px 20px;
   text-align: center;
+  flex: 1;
 }
 
 .hero p {
-  color: var(--text-color);
+  margin: 20px 0;
 }
 
 .hero .btn {
@@ -125,9 +140,9 @@ header h1 {
   padding: 12px 24px;
   background-color: var(--primary-color);
   color: var(--text-color);
-  text-decoration: none;
   border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color var(--transition-speed) ease,
+    transform var(--transition-speed) ease;
 }
 
 .hero .btn:hover {
@@ -137,15 +152,15 @@ header h1 {
 
 /* Footer */
 footer {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #ecf0f1;
+  background-color: var(--footer-bg);
+  color: var(--text-color);
   text-align: center;
   padding: 20px 0;
+  margin-top: auto;
 }
 
 footer a {
   color: var(--primary-color);
-  transition: color 0.3s ease;
 }
 
 footer a:hover {
@@ -163,7 +178,8 @@ footer a:hover {
   padding: 10px 15px;
   border-radius: 50px;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: background var(--transition-speed) ease,
+    transform var(--transition-speed) ease;
   display: none;
 }
 
@@ -172,24 +188,17 @@ footer a:hover {
   transform: scale(1.1);
 }
 
-#backToTop i {
-  font-family: "Font Awesome 5 Free" !important;
-  font-weight: 900 !important;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .topnav a:not(.icon) {
     display: none;
   }
   .topnav .icon {
-    display: block !important;
+    display: block;
     position: absolute;
     right: 20px;
     top: 15px;
     z-index: 1000;
-    font-family: "Font Awesome 5 Free" !important;
-    font-weight: 900 !important;
   }
   .topnav.responsive {
     flex-direction: column;
@@ -197,10 +206,10 @@ footer a:hover {
   }
   .topnav.responsive a {
     display: block;
-    text-align: center;
-    padding: 10px;
+    text-align: left;
+    padding: 10px 20px;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--header-bg);
   }
   .hero h2 {
     font-size: 1.5rem;
