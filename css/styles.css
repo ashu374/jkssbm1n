@@ -283,6 +283,16 @@ footer a:hover {
   .hero p {
     font-size: 1rem;
   }
+  .card i {
+    display: block !important;
+    font-size: 2.5rem; /* Adjust size if needed */
+  }
+  .section {
+    padding: 20px 10px; /* Adjust padding for better spacing */
+  }
+  .grid {
+    grid-template-columns: 1fr; /* Ensure grid items stack vertically */
+  }
 }
 
 @media (max-width: 480px) {
