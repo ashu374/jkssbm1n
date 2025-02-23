@@ -43,19 +43,17 @@ header h1 {
 
 /* Navigation */
 .topnav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   padding: 10px 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  overflow: hidden;
 }
 
 .topnav a {
-  flex: 1;
-  text-align: center;
   padding: 14px 20px;
   font-size: 1rem;
   color: var(--text-color);
@@ -73,6 +71,8 @@ header h1 {
   color: var(--text-color);
   cursor: pointer;
   padding: 10px;
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900 !important;
 }
 
 /* Ensure Font Awesome icons render correctly */
@@ -188,6 +188,8 @@ footer a:hover {
     right: 20px;
     top: 15px;
     z-index: 1000;
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
   }
   .topnav.responsive {
     flex-direction: column;
