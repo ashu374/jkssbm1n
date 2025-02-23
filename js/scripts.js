@@ -1,10 +1,10 @@
 // Toggle navigation menu for responsive design
 function toggleNavigation() {
   const nav = document.getElementById("myTopnav");
-  if (nav.classList.contains("responsive")) {
-    nav.classList.remove("responsive");
+  if (nav.className === "topnav") {
+    nav.className += " responsive";
   } else {
-    nav.classList.add("responsive");
+    nav.className = "topnav";
   }
 }
 
