@@ -1,12 +1,8 @@
 :root {
-  --primary-color: #04aa6d;
+  --primary-color: #04AA6D;
   --secondary-color: #e74c3c;
   --bg-color: #141e30;
   --text-color: #fff;
-  --header-bg: rgba(0, 0, 0, 0.7);
-  --footer-bg: rgba(0, 0, 0, 0.8);
-  --card-bg: #1f2a37;
-  --transition-speed: 0.3s;
 }
 
 /* Global Styles */
@@ -17,20 +13,16 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background: linear-gradient(135deg, var(--bg-color), #243b55);
   color: var(--text-color);
   line-height: 1.6;
   overflow-x: hidden;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 a {
   text-decoration: none;
   color: inherit;
-  transition: color var(--transition-speed) ease;
 }
 
 ul {
@@ -39,26 +31,20 @@ ul {
 
 .container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   padding: 0 20px;
 }
 
 /* Header */
-header {
-  background-color: var(--header-bg);
-  padding: 20px 0;
-}
-
 header h1 {
   text-align: center;
   margin-bottom: 10px;
-  font-size: 2rem;
 }
 
 /* Navigation */
 .topnav {
   overflow: hidden;
-  background-color: var(--header-bg);
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -71,7 +57,7 @@ header h1 {
   padding: 14px 20px;
   font-size: 1rem;
   color: var(--text-color);
-  transition: background-color var(--transition-speed) ease;
+  transition: background-color 0.3s ease;
 }
 
 .topnav a:hover,
@@ -81,10 +67,6 @@ header h1 {
 
 .topnav .icon {
   display: none;
-  font-size: 1.5rem;
-  color: var(--text-color);
-  cursor: pointer;
-  padding: 10px;
 }
 
 /* Sliding Text */
@@ -106,12 +88,8 @@ header h1 {
 }
 
 @keyframes slide {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
 
 /* Hero Section */
@@ -120,11 +98,10 @@ header h1 {
   color: var(--text-color);
   padding: 80px 20px;
   text-align: center;
-  flex: 1;
 }
 
 .hero p {
-  margin: 20px 0;
+  color: var(--text-color);
 }
 
 .hero .btn {
@@ -133,14 +110,20 @@ header h1 {
   padding: 12px 24px;
   background-color: var(--primary-color);
   color: var(--text-color);
+  text-decoration: none;
   border-radius: 5px;
-  transition: background-color var(--transition-speed) ease,
-    transform var(--transition-speed) ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .hero .btn:hover {
   background-color: #028a4b;
   transform: scale(1.05);
+}
+
+/* Sections */
+.section {
+  padding: 30px 0;
+  text-align: center;
 }
 
 /* Grid */
@@ -153,11 +136,10 @@ header h1 {
 
 .card {
   padding: 20px;
-  background: var(--card-bg);
+  background: #1f2a37;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform var(--transition-speed) ease,
-    box-shadow var(--transition-speed) ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
 }
 
@@ -183,7 +165,7 @@ header h1 {
   color: var(--text-color);
   padding: 10px 20px;
   border-radius: 4px;
-  transition: background var(--transition-speed) ease;
+  transition: background 0.3s ease;
 }
 
 .card .btn:hover {
@@ -204,6 +186,7 @@ header h1 {
 
 .resource-list a {
   color: var(--primary-color);
+  transition: color 0.3s ease;
 }
 
 .resource-list a:hover {
@@ -212,15 +195,15 @@ header h1 {
 
 /* Footer */
 footer {
-  background-color: var(--footer-bg);
-  color: var(--text-color);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ecf0f1;
   text-align: center;
   padding: 20px 0;
-  margin-top: auto;
 }
 
 footer a {
   color: var(--primary-color);
+  transition: color 0.3s ease;
 }
 
 footer a:hover {
@@ -238,8 +221,7 @@ footer a:hover {
   padding: 10px 15px;
   border-radius: 50px;
   cursor: pointer;
-  transition: background var(--transition-speed) ease,
-    transform var(--transition-speed) ease;
+  transition: background 0.3s ease, transform 0.3s ease;
   display: none;
 }
 
@@ -258,18 +240,15 @@ footer a:hover {
     position: absolute;
     right: 20px;
     top: 15px;
-    z-index: 1000;
   }
   .topnav.responsive {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
   .topnav.responsive a {
     display: block;
-    text-align: left;
-    padding: 10px 20px;
-    width: 100%;
-    background-color: var(--header-bg);
+    text-align: center;
+    padding: 10px;
   }
   .hero h2 {
     font-size: 1.5rem;
@@ -289,10 +268,5 @@ footer a:hover {
   .topnav a {
     font-size: 12px;
     padding: 8px;
-  }
-  .topnav .icon {
-    font-size: 1.2rem;
-    top: 10px;
-    right: 10px;
   }
 }
