@@ -43,17 +43,19 @@ header h1 {
 
 /* Navigation */
 .topnav {
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: space-around; /* Distributes space evenly */
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 10px 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden; /* Ensures no overflow issues */
 }
 
 .topnav a {
+  flex: 1; /* Allow items to grow and shrink */
+  text-align: center;
   padding: 14px 20px;
   font-size: 1rem;
   color: var(--text-color);
@@ -177,8 +179,14 @@ footer a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .topnav a:not(.icon) {
-    display: none;
+  .topnav {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: flex-start;
+  }
+  .topnav a {
+    width: 100%; /* Full width for each item */
+    text-align: center;
+    padding: 10px 0; /* Adjust padding for vertical layout */
   }
   .topnav .icon {
     display: block !important;
