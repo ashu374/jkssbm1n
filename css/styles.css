@@ -71,8 +71,6 @@ header h1 {
   color: var(--text-color);
   cursor: pointer;
   padding: 10px;
-  font-family: "Font Awesome 5 Free" !important;
-  font-weight: 900 !important;
 }
 
 /* Ensure Font Awesome icons render correctly */
@@ -135,81 +133,6 @@ header h1 {
   transform: scale(1.05);
 }
 
-/* Sections */
-.section {
-  padding: 30px 0;
-  text-align: center;
-}
-
-/* Grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.card {
-  padding: 20px;
-  background: #1f2a37;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-}
-
-.card i {
-  color: var(--primary-color);
-  margin-bottom: 10px;
-  font-size: 3rem;
-  font-family: "Font Awesome 5 Free" !important;
-  font-weight: 900 !important;
-}
-
-.card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-}
-
-.card .btn {
-  margin-top: 10px;
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  padding: 10px 20px;
-  border-radius: 4px;
-  transition: background 0.3s ease;
-}
-
-.card .btn:hover {
-  background: #028a4b;
-}
-
-/* Resource List */
-.resource-list {
-  list-style-type: none;
-  padding: 0;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.resource-list li {
-  margin-bottom: 10px;
-}
-
-.resource-list a {
-  color: var(--primary-color);
-  transition: color 0.3s ease;
-}
-
-.resource-list a:hover {
-  color: var(--text-color);
-}
-
 /* Footer */
 footer {
   background-color: rgba(0, 0, 0, 0.8);
@@ -263,8 +186,6 @@ footer a:hover {
     right: 20px;
     top: 15px;
     z-index: 1000;
-    font-family: "Font Awesome 5 Free" !important;
-    font-weight: 900 !important;
   }
   .topnav.responsive {
     flex-direction: column;
@@ -282,16 +203,6 @@ footer a:hover {
   }
   .hero p {
     font-size: 1rem;
-  }
-  .card i {
-    display: block !important;
-    font-size: 2.5rem; /* Adjust size if needed */
-  }
-  .section {
-    padding: 20px 10px; /* Adjust padding for better spacing */
-  }
-  .grid {
-    grid-template-columns: 1fr; /* Ensure grid items stack vertically */
   }
 }
 
