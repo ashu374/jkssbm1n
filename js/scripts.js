@@ -1,48 +1,41 @@
-// Toggle navigation menu for responsive design
+// Cookie Consent Logic
+function acceptCookies() {
+  document.getElementById("cookieConsent").style.display = "none";
+  localStorage.setItem("cookieConsent", "accepted");
+  gtag('consent', 'update', {
+    'analytics_storage': 'granted'
+  });
+}
+
+if (localStorage.getItem("cookieConsent") === "accepted") {
+  document.getElementById("cookieConsent").style.display = "none";
+}
+
+// Toggle Navigation for Mobile
 function toggleNavigation() {
   const nav = document.getElementById("myTopnav");
-  if (nav.className === "topnav") {
-    nav.className += " responsive";
-  } else {
-    nav.className = "topnav";
+  if (!document.body.classList.contains("home")) { // Only toggle on non-home pages
+    if (nav.classList.contains("responsive")) {
+      nav.classList.remove("responsive");
+    } else {
+      nav.classList.add("responsive");
+    }
   }
 }
 
-// Smooth scroll to top
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-// Show/hide back-to-top button based on scroll position
+// Back-to-Top Button Logic
 window.addEventListener("scroll", function () {
   const button = document.getElementById("backToTop");
-  if (button) {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      button.style.display = "block";
-    } else {
-      button.style.display = "none";
-    }
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    button.style.display = "block";
+  } else {
+    button.style.display = "none";
   }
 });
 
-// Set up event listeners and active class on page load
-document.addEventListener("DOMContentLoaded", function () {
-  // Toggle navigation only on icon click
-  const navIcon = document.querySelector(".topnav .icon");
-  if (navIcon) {
-    navIcon.addEventListener("click", toggleNavigation);
-  }
-
-  // Set active class based on current page
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
-  const navLinks = document.querySelectorAll(".topnav a");
-
-  navLinks.forEach(link => {
-    const href = link.getAttribute("href").split("/").pop() || "index.html";
-    if (href === currentPage) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
   });
-});
+}
