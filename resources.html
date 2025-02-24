@@ -7,7 +7,27 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/420ca6cfdb.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP77DTCB30"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'regions': ['IN']
+    });
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-TP77DTCB30', { anonymize_ip: true });
+  </script>
 </head>
 <body>
   <header>
@@ -54,5 +74,48 @@
   <button id="backToTop" class="btn" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
 
   <script src="js/scripts.js"></script>
+  <script>
+    // Cookie Consent Logic
+    function acceptCookies() {
+      document.getElementById("cookieConsent").style.display = "none";
+      localStorage.setItem("cookieConsent", "accepted");
+      gtag('consent', 'update', {
+        'analytics_storage': 'granted'
+      });
+    }
+
+    if (localStorage.getItem("cookieConsent") === "accepted") {
+      document.getElementById("cookieConsent").style.display = "none";
+    }
+
+    // Toggle Navigation for Mobile
+    function toggleNavigation() {
+      const nav = document.getElementById("myTopnav");
+      if (!document.body.classList.contains("home")) { // Only toggle on non-home pages
+        if (nav.classList.contains("responsive")) {
+          nav.classList.remove("responsive");
+        } else {
+          nav.classList.add("responsive");
+        }
+      }
+    }
+
+    // Back-to-Top Button Logic
+    window.addEventListener("scroll", function () {
+      const button = document.getElementById("backToTop");
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        button.style.display = "block";
+      } else {
+        button.style.display = "none";
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+  </script>
 </body>
 </html>
