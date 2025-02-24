@@ -31,7 +31,7 @@
     gtag('config', 'G-TP77DTCB30', { anonymize_ip: true });
   </script>
 </head>
-<body>
+<body class="home">
   <header>
     <div class="container">
       <h1>JKSSB Mission Ek Naukri</h1>
@@ -86,13 +86,11 @@
     function acceptCookies() {
       document.getElementById("cookieConsent").style.display = "none";
       localStorage.setItem("cookieConsent", "accepted");
-      // Update Google Analytics consent if needed
       gtag('consent', 'update', {
         'analytics_storage': 'granted'
       });
     }
 
-    // Check if user has already accepted cookies
     if (localStorage.getItem("cookieConsent") === "accepted") {
       document.getElementById("cookieConsent").style.display = "none";
     }
@@ -100,10 +98,12 @@
     // Toggle Navigation for Mobile
     function toggleNavigation() {
       const nav = document.getElementById("myTopnav");
-      if (nav.classList.contains("responsive")) {
-        nav.classList.remove("responsive");
-      } else {
-        nav.classList.add("responsive");
+      if (!document.body.classList.contains("home")) {
+        if (nav.classList.contains("responsive")) {
+          nav.classList.remove("responsive");
+        } else {
+          nav.classList.add("responsive");
+        }
       }
     }
 
